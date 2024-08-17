@@ -1,0 +1,14 @@
+#advanced-options-parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#advanced-options{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    border-style: solid;
+    padding-bottom: 1em;
+    border-radius: 1em;
+}
