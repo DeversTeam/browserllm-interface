@@ -6,7 +6,7 @@ function RetrievalOptionsComponent() {
             <h3>Retrieval options</h3>
             <select id="retrieval-options-list">
                 <option value="bm25">BM25</option>
-                <option value="embeddings">Embeddings</option>
+                <option selected value="embeddings">Embeddings</option>
                 <option value="hybrid">Hybrid</option>
             </select>
             <div>

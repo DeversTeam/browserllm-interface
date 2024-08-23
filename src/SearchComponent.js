@@ -25,7 +25,7 @@ function WriteResponse() {
     document.getElementById('loader-links').style.display='flex';
     document.getElementById('link-list').style.display='none';
     
-    fetch('http://127.0.0.1:5000/api/data',{
+    fetch('http://localhost:5000/api/data',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -43,18 +43,30 @@ function WriteResponse() {
         const documents=data.answer.documents;
         console.log(documents);
         var content="";
+        var links=[];
+        var summaries=[];
+        var index=0
         for (const [key, value] of Object.entries(documents)) {
             console.log(value.meta["url"], value.content);
-            content+="\n<div class='link'><a href="+value.meta["url"];
-            if (presentationOption==="links + answer + summary") {
-                content+=" title="+value.content;
+            //content+="\n<div class='link'><a href="+value.meta["url"];
+            if (links.includes(value.meta["url"])){
+            }else{
+                links.push(value.meta["url"])
             }
-            content+=" target='_blank'>"+value.meta["url"]+"</a>";
+            index=links.indexOf(value.meta["url"])
+            //content+=" target='_blank'>"+value.meta["url"]+"</a>";
             if (presentationOption==="links + answer + summary") {
-                content+="<p>"+value.content+"</p>";
+                //content+="<p>"+value.content+"</p>";
+                summaries[index]=summaries[index]+"\n"+value.content
             }
-            content+="</div>";
-          }
+        }
+        for (let i=0;i<links.length;i++){
+            content+="\n<div class='link'><a href="+links[i]+" target='_blank'>"+links[i]+"</a>"
+            if (presentationOption==="links + answer + summary") {
+                content+="<p>"+summaries[i]+"</p>"
+                content+="<embed type='text/html' src=\""+links[i]+"\" width='100%' height='20%'></div>";
+            }
+        }
         document.getElementById("link-list").innerHTML=content;
     })
     .catch(error=>console.error('Erreur:',error))
