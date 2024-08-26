@@ -20,4 +20,8 @@ function GeneratedResponseComponent() {
     );
 }
 
+function setResponse(response){
+    //faire un truc
+}
+
 export default GeneratedResponseComponent;
