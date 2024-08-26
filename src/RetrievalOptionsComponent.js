@@ -1,4 +1,4 @@
-import './RetrievalOptionsComponent.css';
+//import './RetrievalOptionsComponent.css';
 
 function RetrievalOptionsComponent() {
     return(
