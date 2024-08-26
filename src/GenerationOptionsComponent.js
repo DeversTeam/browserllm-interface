@@ -1,4 +1,4 @@
-import './GenerationOptionsComponent.css'
+//import './GenerationOptionsComponent.css'
 
 function GenerationOptionsComponent() {
     return(

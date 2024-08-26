@@ -1,5 +1,5 @@
 import LabeledCheckboxComponent from "./LabeledCheckboxComponent";
-import './PostRetrievalOptionsComponent.css'
+//import './PostRetrievalOptionsComponent.css'
 
 function PostRetrievalOptionsComponent() {
     const summaryOptions=['Zero Shot Summary','Few Shot Summary'];
