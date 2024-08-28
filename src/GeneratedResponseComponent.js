@@ -1,27 +1,24 @@
 //import './GeneratedResponseComponent.css'
 
-function GeneratedResponseComponent() {
+function GeneratedResponseComponent({response}) {
     return(
-        <div id="generated-response" className="flex flex-col w-1/2 pl-5 pt-2 pb-2 pr-2 ml-5 mr-5 mt-5 border-l">
+        <div id="generated-response" className="flex flex-col w-1/2 pl-5 pt-5 pb-2 pr-2 ml-5 mr-5 mt-5 border-l">
             <div className="flex flex-col items-start w-full">
                 <p id="question-response" className="flex flex-row self-end bg-slate-400 px-5 py-2 rounded-l-2xl rounded-tr-2xl"></p>
                 <div className="flex flex-row items-start mt-5 w-full">
-                    <div className="flex bg-[url('\\images\\idole50.png')] size-9 bg-no-repeat bg-cover mr-2"></div>
-                    <p id="response" className="flex bg-slate-400 w-10/12 px-5 py-2 rounded-r-2xl rounded-bl-2xl"></p>
+                <svg id="response-icon" aria-hidden="true" className="flex flex-1 size-9 text-blue-200 dark:text-stone-500 fill-blue-500" viewBox="0 0 392 383" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M136 382.646C57.1011 357.303 0 283.32 0 196C0 87.7522 87.7522 0 196 0C304.248 0 392 87.7522 392 196C392 283.32 334.899 357.303 256 382.646V352.124C319.134 328.127 364 267.053 364 195.5C364 102.992 289.008 28 196.5 28C103.992 28 29 102.992 29 195.5C29 266.675 73.3926 327.481 136 351.74V382.646ZM372.5 39C383.27 39 392 30.2695 392 19.5C392 8.73047 383.27 0 372.5 0C361.73 0 353 8.73047 353 19.5C353 30.2695 361.73 39 372.5 39ZM196 208C239.078 208 274 173.078 274 130C274 86.9218 239.078 52 196 52C152.922 52 118 86.9218 118 130C118 173.078 152.922 208 196 208ZM196 184.141C225.901 184.141 250.141 159.901 250.141 130C250.141 100.099 225.901 75.8589 196 75.8589C166.099 75.8589 141.859 100.099 141.859 130C141.859 159.901 166.099 184.141 196 184.141ZM215 130.5C215 141.27 206.27 150 195.5 150C184.73 150 176 141.27 176 130.5C176 119.73 184.73 111 195.5 111C206.27 111 215 119.73 215 130.5ZM215 241H175V383H215V241Z"/>
+                </svg>
+                    <p id="response" className="flex bg-slate-400 w-10/12 px-5 py-2 rounded-r-2xl rounded-bl-2xl">{response}</p>
                 </div>
             </div>
             <div id="loader-answer" className="hidden mt-14 flex-col items-center">
-                <svg aria-hidden="true" className="flex flex-1 w-20 h-20 text-gray-200 animate-spin dark:text-stone-500 fill-gray-800" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                <svg aria-hidden="true" className="flex flex-1 size-20 text-blue-200 sm:animate-spin max-sm:animate-bounce dark:text-stone-500 fill-blue-500" viewBox="0 0 392 383" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M136 382.646C57.1011 357.303 0 283.32 0 196C0 87.7522 87.7522 0 196 0C304.248 0 392 87.7522 392 196C392 283.32 334.899 357.303 256 382.646V352.124C319.134 328.127 364 267.053 364 195.5C364 102.992 289.008 28 196.5 28C103.992 28 29 102.992 29 195.5C29 266.675 73.3926 327.481 136 351.74V382.646ZM372.5 39C383.27 39 392 30.2695 392 19.5C392 8.73047 383.27 0 372.5 0C361.73 0 353 8.73047 353 19.5C353 30.2695 361.73 39 372.5 39ZM196 208C239.078 208 274 173.078 274 130C274 86.9218 239.078 52 196 52C152.922 52 118 86.9218 118 130C118 173.078 152.922 208 196 208ZM196 184.141C225.901 184.141 250.141 159.901 250.141 130C250.141 100.099 225.901 75.8589 196 75.8589C166.099 75.8589 141.859 100.099 141.859 130C141.859 159.901 166.099 184.141 196 184.141ZM215 130.5C215 141.27 206.27 150 195.5 150C184.73 150 176 141.27 176 130.5C176 119.73 184.73 111 195.5 111C206.27 111 215 119.73 215 130.5ZM215 241H175V383H215V241Z"/>
                 </svg>
             </div>
         </div>
     );
-}
-
-function setResponse(response){
-    //faire un truc
 }
 
 export default GeneratedResponseComponent;

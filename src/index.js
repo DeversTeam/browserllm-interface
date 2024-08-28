@@ -7,35 +7,33 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
 function displayTitle(){
   var title="GenerationIntegratedSearchEngine"
-  var i = 0;
-  var interval = setInterval(function(){
+  var i = 1;
+  var sleep=100;
+  var interval = setInterval(function(){    
     if(document.getElementById("title").textContent==="Generation"){
       document.getElementById("title").textContent="G."
-    }
-    if(document.getElementById("title").textContent==="G.Integrated"){
+    }else if(document.getElementById("title").textContent==="G.Integrated"){
       document.getElementById("title").textContent="G.I."
-    }
-    if(document.getElementById("title").textContent==="G.I.Search"){
+    }else if(document.getElementById("title").textContent==="G.I.Search"){
       document.getElementById("title").textContent="G.I.S."
-    }
-    if(document.getElementById("title").textContent==="G.I.S.Engine"){
-      document.getElementById("title").textContent="G.I.S.E."
+    }else if(document.getElementById("title").textContent==="G.I.S.Engine"){
+      document.getElementById("title").textContent="GISE"
     }
     document.getElementById("title").textContent += title.charAt(i);
     i++;
     if (i > title.length){
         clearInterval(interval);
     }
-  }, 150);
+  }, sleep);
 }
-
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
 displayTitle();
 

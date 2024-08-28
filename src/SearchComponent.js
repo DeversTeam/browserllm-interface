@@ -35,10 +35,10 @@ function SearchComponent({onSearch, setPreRetrievalOption, setRetrievalOption, s
     const [question,setQuestion] = useState('');
 
     return(
-        <div id="search-div" className="flex w-full flex-col items-center">
-            <div id='query-div' className="flex hover:shadow focus-within:shadow flex-row items-center w-1/3 border-solid border border-gray-300 rounded-full pl-5 pr-5 pt-2 pb-2 bg-white">
+        <div id="search-div" className="flex sm:w-[600px] max-sm:w-full max-sm:pl-[20px] max-sm:pr-[20px] flex-col items-center">
+            <div id='query-div' className="flex hover:shadow-md focus-within:shadow-md flex-row items-center w-full border-solid border border-gray-300 rounded-full pl-5 pr-5 pt-2 pb-2 bg-white">
                 <svg className="h-6 w-6 text-slate-500"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                <input type='text' value={question} onChange={e=> handleChange(e.target.value,setQuestion)} className="flex flex-row focus:outline-none bg-white w-full pl-2 placeholder:italic" id='query' name='query' placeholder='Type' onKeyDown={e=>{enterPressed(e,onSearch,question,setQuestion);}}></input>
+                <input type='text' value={question} onChange={e=> handleChange(e.target.value,setQuestion)} className="flex flex-row w-full focus:outline-none bg-white pl-2 placeholder:italic" id='query' name='query' placeholder='Type' onKeyDown={e=>{enterPressed(e,onSearch,question,setQuestion);}}></input>
                 <div id="delete-icon" className="hidden">
                     <button id="delete-button" title="delete text" type="button" className="flex p-0 antialiased m-0 rounded-full hover:scale-110 transition hover:duration-150" onClick={e=>{deleteQuery(setQuestion)}}>
                         <svg className="h-6 w-6 text-slate-600 hover:text-gray-800"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" /></svg>
@@ -51,7 +51,7 @@ function SearchComponent({onSearch, setPreRetrievalOption, setRetrievalOption, s
                     </svg>
                 </div>
             </div>
-            <div id="search-buttons" className="flex subpixel-antialiased flex-row justify-center mt-5 w-1/3">
+            <div id="search-buttons" className="flex subpixel-antialiased flex-row justify-center mt-5 w-full">
                 <div className="flex flex-col">
                     <button type="button" className="flex py-2 px-5 border mr-3 hover:border-gray-300 border-white rounded" onClick={e=>{onSearch(question); deleteQuery(setQuestion);}}>GISE Search</button>
                 </div>

@@ -1,12 +1,12 @@
 import LinkComponent from "./LinkComponent";
 //import "./LinkListComponent.css";
 
-function LinkListComponent({links,summaries}) {
+function LinkListComponent({titles,links,summaries}) {
 
     return(
-        <div className="w-1/2">
-            <ul id="link-list" className="flex flex-col pl-5 pr-5 pt-5 pb-5 w-5/6">
-                {links.map((link,index) => <LinkComponent link={link} summary={summaries[index]}></LinkComponent>)}
+        <div className="">
+            <ul id="link-list" className="flex flex-col pl-5 pr-5 pb-5 w-5/6">
+                {links.map((link,index) => <LinkComponent title={titles[index]} link={link} summary={summaries[index]}></LinkComponent>)}
             </ul>
             <div id="loader-links"></div>
             <div id="loader-list" className="flex-col animate-pulse hidden pl-5 pr-5 pt-5 pb-5">

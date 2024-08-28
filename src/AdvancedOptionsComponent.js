@@ -17,7 +17,7 @@ function AdvancedOptionsComponent({setPreRetrievalOption, setRetrievalOption, se
     return(
         <div id="advanced-options-parent" className="flex flex-col ml-3 items-center">
             <button type="button" className="flex py-2 px-5 border hover:border-gray-300 border-white rounded" onClick={unhideAdvancedOptions}>Advanced search</button>
-            <div id='advanced-options' className="flex-col text-gray-800 bg-white hidden p-5">
+            <div id='advanced-options' className="fixed text-gray-800 bg-white hidden mt-20 mr-56 self-center">
                 <PreRetrievalOptionsComponent setOptions={setPreRetrievalOption}/>
                 <RetrievalOptionsComponent setOptions={setRetrievalOption} setTopK={setTopK}/>
                 <PostRetrievalOptionsComponent setSummary={setSummary} setFusion={setFusion} setRerank={setRerank}/>
