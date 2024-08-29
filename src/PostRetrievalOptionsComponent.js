@@ -10,7 +10,7 @@ function PostRetrievalOptionsComponent({setSummary,setFusion,setRerank}) {
     return(
         <div id="post-retrieval-options" className='flex flex-col p-5'>
             <h3 className="mb-2">Post retrieval options</h3>
-            <LabeledCheckboxComponent name='summary' options={summaryOptions} checked={true} setChange={setSummary}/>
+            <LabeledCheckboxComponent name='summary' options={summaryOptions} checked={false} setChange={setSummary}/>
             <LabeledCheckboxComponent name='fusion' options={fusionOptions} checked={false} setChange={setFusion}/>
             <LabeledCheckboxComponent name='rerank' options={rerankOptions} checked={false} setChange={setRerank}/>
         </div>

@@ -573,14 +573,6 @@ video {
   pointer-events: none;
 }
 
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -603,6 +595,10 @@ video {
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .ml-3 {
@@ -633,20 +629,8 @@ video {
   margin-top: 0.5rem;
 }
 
-.mt-36 {
-  margin-top: 9rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
 }
 
 .inline {
@@ -655,6 +639,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -685,14 +673,6 @@ video {
   height: 0.5rem;
 }
 
-.h-28 {
-  height: 7rem;
-}
-
-.h-3\/4 {
-  height: 75%;
-}
-
 .h-4 {
   height: 1rem;
 }
@@ -705,16 +685,8 @@ video {
   height: 100vh;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-1\/3 {
   width: 33.333333%;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
 }
 
 .w-2\/3 {
@@ -737,8 +709,8 @@ video {
   width: 1.5rem;
 }
 
-.w-\[900px\] {
-  width: 900px;
+.w-\[170px\] {
+  width: 170px;
 }
 
 .w-full {
@@ -749,112 +721,8 @@ video {
   width: max-content;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
-.w-\[200px\] {
-  width: 200px;
-}
-
-.w-\[150px\] {
-  width: 150px;
-}
-
-.w-\[170px\] {
-  width: 170px;
-}
-
-.w-\[450px\] {
-  width: 450px;
-}
-
-.w-\[480px\] {
-  width: 480px;
-}
-
-.w-\[1080\] {
-  width: 1080;
-}
-
-.w-\[1080px\] {
-  width: 1080px;
-}
-
-.w-\[screen\] {
-  width: screen;
-}
-
-.w-svw {
-  width: 100svw;
-}
-
-.w-lvw {
-  width: 100lvw;
-}
-
-.w-96 {
-  width: 24rem;
-}
-
-.w-\[2000\] {
-  width: 2000;
-}
-
-.w-\[2000px\] {
-  width: 2000px;
-}
-
-.w-\[600px\] {
-  width: 600px;
-}
-
-.w-\[564px\] {
-  width: 564px;
-}
-
-.w-\[464px\] {
-  width: 464px;
-}
-
-.w-\[364px\] {
-  width: 364px;
-}
-
-.w-\[300px\] {
-  width: 300px;
-}
-
-.min-w-\[1200px\] {
-  min-width: 1200px;
-}
-
-.min-w-\[1080\] {
-  min-width: 1080;
-}
-
-.min-w-\[1080px\] {
-  min-width: 1080px;
-}
-
-.min-w-\[480px\] {
-  min-width: 480px;
-}
-
-.max-w-prose {
-  max-width: 65ch;
-}
-
-.max-w-\[480px\] {
-  max-width: 480px;
-}
-
 .flex-1 {
   flex: 1 1 0%;
-}
-
-.flex-shrink {
-  flex-shrink: 1;
 }
 
 .grow {
@@ -938,10 +806,6 @@ video {
   overflow: hidden;
 }
 
-.overflow-scroll {
-  overflow: scroll;
-}
-
 .text-ellipsis {
   text-overflow: ellipsis;
 }
@@ -1003,14 +867,14 @@ video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
 .bg-slate-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-
-.bg-stone-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1020,11 +884,6 @@ video {
 
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
-}
-
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-100 {
@@ -1111,6 +970,10 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-sans {
@@ -1290,10 +1153,6 @@ video {
     width: 0px;
   }
 
-  .max-xl\:w-\[700px\] {
-    width: 700px;
-  }
-
   .max-xl\:w-\[1080px\] {
     width: 1080px;
   }
@@ -1307,13 +1166,13 @@ video {
   .max-\[865px\]\:flex-col {
     flex-direction: column;
   }
-
-  .max-\[865px\]\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
 }
 
 @media not all and (min-width: 640px) {
+  .max-sm\:w-10\/12 {
+    width: 83.333333%;
+  }
+
   .max-sm\:w-full {
     width: 100%;
   }
@@ -1344,6 +1203,10 @@ video {
     animation: bounce 1s infinite;
   }
 
+  .max-sm\:flex-col {
+    flex-direction: column;
+  }
+
   .max-sm\:pl-\[20px\] {
     padding-left: 20px;
   }
@@ -1354,6 +1217,18 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:absolute {
+    position: absolute;
+  }
+
+  .sm\:w-\[364px\] {
+    width: 364px;
+  }
+
+  .sm\:w-\[480px\] {
+    width: 480px;
+  }
+
   .sm\:w-\[600px\] {
     width: 600px;
   }
@@ -1366,6 +1241,10 @@ video {
 
   .sm\:animate-spin {
     animation: spin 1s linear infinite;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
   }
 }
 
@@ -1384,20 +1263,12 @@ video {
     left: 800px;
   }
 
-  .xl\:w-\[200px\] {
-    width: 200px;
-  }
-
-  .xl\:w-\[900px\] {
-    width: 900px;
-  }
-
-  .xl\:w-\[450px\] {
-    width: 450px;
-  }
-
   .xl\:w-\[1280px\] {
     width: 1280px;
+  }
+
+  .xl\:w-\[200px\] {
+    width: 200px;
   }
 }
 

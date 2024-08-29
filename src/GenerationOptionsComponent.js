@@ -11,8 +11,8 @@ function GenerationOptionsComponent({setOptions, setPresentationOption}) {
             </select>
             <select id="presentation-option-list" className="rounded border-gray-300 border hover:cursor-pointer border-solid appearance-none hover:border-slate-500 focus:outline-none px-2" onChange={e=> setPresentationOption(e.target.value)}>
                 <option value="links">Links</option>
-                <option value="links + answer">Links and answer</option>
-                <option selected value="links + answer + summary">Links, answer and summary</option>
+                <option selected value="links + answer">Links and answer</option>
+                <option value="links + answer + summary">Links, answer and summary</option>
             </select>
         </div>
     );
