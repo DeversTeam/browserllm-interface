@@ -2,7 +2,7 @@
 import SearchComponent from './SearchComponent';
 import GeneratedResponseComponent from './GeneratedResponseComponent';
 import LinkListComponent from './LinkListComponent';
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 
 function reload(){
   window.location.reload(true);
@@ -85,7 +85,7 @@ function searchStart(question){
 
   document.getElementById('body').style.flexDirection="row";
   document.getElementById('body').style.flexGrow="0";
-  document.getElementById('body').style.position="fixed";
+  document.getElementById('body').style.position="flex";
   document.getElementById('body2').style.flexDirection="row";
   document.getElementById('body2').style.flexGrow="0";
   document.getElementById('search-div').style.flexDirection="row";
@@ -95,7 +95,8 @@ function searchStart(question){
   document.getElementById('title').style.marginRight="2rem";
   document.getElementById('title').style.marginLeft="5rem";
   document.getElementById('empty-div').style.display="none";
-  document.getElementById('empty-div2').style.display="none";
+  document.getElementById('empty-div2').style.display="flex";
+  document.getElementById('empty-div3').style.display="none";
   document.getElementById('navbar').style.display="none";
   
   document.getElementById('body2').style.borderBottomWidth="1px";
@@ -157,6 +158,34 @@ function App() {
   const [summaries, setSummaries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [prompt, setPrompt] = useState('Hello');
+  const [footerText, setFooterText]=useState('This system has been developed by a student to complete his graduation work.');
+  const [titleText, setTitleText]=useState('GISE');
+  
+  /*useEffect(()=>{
+    var title="GenerationIntegratedSearchEngine";
+    var currentTitle="G";
+    var currentLetter="";
+    var i = 1;
+    var sleep=100;
+    var interval = setInterval(function(){
+      currentLetter=title.charAt(i);
+      currentTitle+=currentLetter;
+      setTitleText(currentTitle);
+      if(currentTitle==="Generation"){
+        currentTitle="G."
+      }else if(currentTitle==="G.Integrated"){
+        currentTitle="G.I."
+      }else if(currentTitle==="G.I.Search"){
+        currentTitle="G.I.S."
+      }else if(currentTitle==="G.I.S.Engine"){
+        currentTitle="GISE"
+      }
+      i++;
+      if (i > title.length){
+          clearInterval(interval);
+      }
+    }, sleep);
+  },[]);*/
 
   useEffect(() => {
     if (question) {
@@ -222,25 +251,25 @@ function App() {
       <div id="navbar" className="">
         navbar
       </div>
-      <div id="body" className="flex grow flex-col items-center w-screen bg-opacity-100 z-50 backdrop-blur-sm bg-white/30">
-        <div id="empty-div" className="flex flex-col grow flex-shrink"></div>
-        <div id="body2" className="flex flex-col items-center grow w-full">
-          <h1 id="title" className="flex text-8xl subpixel-antialiased font-title pb-5 pt-5 select-none bg-gradient-to-r from-schroom to-haze text-transparent bg-clip-text cursor-pointer" onClick={reload}>G</h1>
+      <div id="body" className="flex grow flex-col items-center bg-opacity-100 z-50 backdrop-blur-sm bg-white/30">
+        <div id="empty-div" className="flex flex-col grow"></div>
+        <div id="body2" className="flex flex-col items-center min-w-[1080px] w-full">
+          <h1 id="title" className="flex text-8xl subpixel-antialiased font-title pb-5 pt-5 select-none bg-gradient-to-r from-schroom to-haze text-transparent bg-clip-text cursor-pointer" onClick={reload}>{titleText}</h1>
           <SearchComponent onSearch={handleSearch} setPreRetrievalOption={setPreRetrievalOption} setRetrievalOption={setRetrievalOption} setTopK={setTopK} setSummary={setSummary} setFusion={setFusion} setRerank={setRerank} setGenerationOption={setGenerationOption} setPresentationOption={setPresentationOption}/>
         </div>
-        <div id="empty-div2" className="flex grow"></div>
+        <div id="empty-div3" className="flex flex-col grow"></div>
       </div>
-      <div id="response-div" className="hidden flex-row grow mt-36 xl:w-[900px] max-xl:w-[700px]">
+      <div id="response-div" className="hidden flex-row grow xl:w-[1280px] max-xl:w-[1080px]">
         <div id="empty-div2" className="flex flex-col xl:w-[200px] max-xl:w-0"></div>
-        <div id="links-div" className="flex w-full grow mt-5">
+        <div id="links-div" className="flex w-[600px] mt-5">
           <LinkListComponent titles={titles} links={links} summaries={summaries}/>
         </div>
-        <div className="fixed xl:left-[800px] max-xl:left-[600px] overflow-scroll h-3/4 w-[900px]">
+        <div className="absolute xl:left-[800px] max-xl:left-[600px] w-[480px]">
           <GeneratedResponseComponent response={response}/>
         </div>
       </div>
-      <footer className="flex flex-row bottom-0 justify-center bg-stone-200 border-t text-black mt-5">
-        <p>This system has been developed by a student to complete his graduation work.</p>
+      <footer className="flex flex-row bottom-0 justify-center bg-slate-200 border-t text-black mt-5 z-50">
+        <span>{footerText}</span>
       </footer>
     </div>
   );

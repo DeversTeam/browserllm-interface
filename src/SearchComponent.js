@@ -51,9 +51,9 @@ function SearchComponent({onSearch, setPreRetrievalOption, setRetrievalOption, s
                     </svg>
                 </div>
             </div>
-            <div id="search-buttons" className="flex subpixel-antialiased flex-row justify-center mt-5 w-full">
-                <div className="flex flex-col">
-                    <button type="button" className="flex py-2 px-5 border mr-3 hover:border-gray-300 border-white rounded" onClick={e=>{onSearch(question); deleteQuery(setQuestion);}}>GISE Search</button>
+            <div id="search-buttons" className="flex subpixel-antialiased min-[865px]:flex-row max-[865px]:flex-col justify-center mt-5">
+                <div className="">
+                    <button type="button" className="py-2 px-5 border mr-3 hover:border-gray-300 border-white rounded w-[170px]" onClick={e=>{onSearch(question); deleteQuery(setQuestion);}}>GISE Search</button>
                 </div>
                 <AdvancedOptionsComponent setPreRetrievalOption={setPreRetrievalOption} setRetrievalOption={setRetrievalOption} setTopK={setTopK} setSummary={setSummary} setFusion={setFusion} setRerank={setRerank} setGenerationOption={setGenerationOption} setPresentationOption={setPresentationOption}/>
             </div>

@@ -8,8 +8,8 @@ function PostRetrievalOptionsComponent({setSummary,setFusion,setRerank}) {
     const rerankOptions=['Lost In The Middle','Diversity'];
 
     return(
-        <div id="post-retrieval-options" className='side-margins'>
-            <h3>Post retrieval options</h3>
+        <div id="post-retrieval-options" className='flex flex-col p-5'>
+            <h3 className="mb-2">Post retrieval options</h3>
             <LabeledCheckboxComponent name='summary' options={summaryOptions} checked={true} setChange={setSummary}/>
             <LabeledCheckboxComponent name='fusion' options={fusionOptions} checked={false} setChange={setFusion}/>
             <LabeledCheckboxComponent name='rerank' options={rerankOptions} checked={false} setChange={setRerank}/>

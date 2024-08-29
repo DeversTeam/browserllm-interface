@@ -5,7 +5,7 @@ function LinkListComponent({titles,links,summaries}) {
 
     return(
         <div className="">
-            <ul id="link-list" className="flex flex-col pl-5 pr-5 pb-5 w-5/6">
+            <ul id="link-list" className="flex flex-col pl-5 pr-5 pb-5">
                 {links.map((link,index) => <LinkComponent title={titles[index]} link={link} summary={summaries[index]}></LinkComponent>)}
             </ul>
             <div id="loader-links"></div>
