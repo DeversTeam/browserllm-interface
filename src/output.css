@@ -446,7 +446,7 @@ video {
 
   font-display: swap;
 
-  src: url(fonts\\Roboto-Medium.ttf) format('opentype');
+  src: url(./fonts/Roboto-Medium.ttf) format('opentype');
 }
 
 @font-face {
@@ -458,7 +458,7 @@ video {
 
   font-display: swap;
 
-  src: url(fonts\\Roboto-Regular.ttf) format('opentype');
+  src: url(./fonts/Roboto-Regular.ttf) format('opentype');
 }
 
 *, ::before, ::after {
