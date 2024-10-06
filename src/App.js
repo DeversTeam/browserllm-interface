@@ -2,7 +2,7 @@
 import SearchComponent from './SearchComponent';
 import GeneratedResponseComponent from './GeneratedResponseComponent';
 import LinkListComponent from './LinkListComponent';
-import {useState, useEffect, useRef, useContext} from "react";
+import {useState, useEffect} from "react";
 
 function reload(){
   window.location.reload(true);
@@ -15,7 +15,7 @@ function proveLinks(data,presentationOption,setTitles,setLinks,setSummaries){
   var links=[];
   var summaries=[];
   var index=0
-  for (const [key, value] of Object.entries(documents)) {
+  for (const [, value] of Object.entries(documents)) {
       if (links.includes(value.meta["url"])){
       }else{
           links.push(value.meta["url"]);
@@ -94,7 +94,7 @@ function searchStart(question){
   document.getElementById('body').style.flexDirection="row";
   document.getElementById('body').style.flexGrow="0";
   document.getElementById('body').style.position="flex";
-  var x = window.matchMedia("not all and (max-width: 640px)");
+  //var x = window.matchMedia("not all and (max-width: 640px)");
   if(x.matches){
     document.getElementById('body2').style.flexDirection="row";
     document.getElementById('body2').style.flexGrow="0";
@@ -104,7 +104,7 @@ function searchStart(question){
   document.getElementById('search-div').style.flexGrow="0";
   document.getElementById('search-buttons').style.display="none";
   document.getElementById('title').style.fontSize="2rem";
-  var x = window.matchMedia("not all and (max-width: 640px)");
+  //var x = window.matchMedia("not all and (max-width: 640px)");
   if(x.matches){
     document.getElementById('title').style.marginRight="2rem";
     document.getElementById('title').style.marginLeft="5rem";
@@ -124,7 +124,7 @@ function searchStart(question){
   document.getElementById('body2').style.paddingTop="2rem";
 
   document.getElementById('search-div').style.paddingRight="20px";
-  var x = window.matchMedia("not all and (max-width: 640px)");
+  //var x = window.matchMedia("not all and (max-width: 640px)");
   if(x.matches){
     document.getElementById('search-div').style.paddingLeft="0px";
   }else{
@@ -194,17 +194,17 @@ function App() {
   const [generationOption, setGenerationOption] = useState("mixtral");
   const [presentationOption, setPresentationOption] = useState("links + answer");
   const [question, setQuestion] = useState('');
-  const [validate,setValidate]=useState(false);
+  //const [validate,setValidate]=useState(false);
   const [top_k, setTopK] = useState(10);
   const [response, setResponse] = useState(null);
   const [titles, setTitles] = useState([]);
   const [links, setLinks] = useState([]);
   const [summaries, setSummaries] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [prompt, setPrompt] = useState('Hello');
-  const [footerText, setFooterText]=useState('This system has been developed by a student to complete his graduation work.');
-  const [titleText, setTitleText]=useState('GISE');
-  const [address,setAddress]=useState('http://192.168.2.138:5000')
+  const [, setIsLoading] = useState(false);
+  //const [prompt, setPrompt] = useState('Hello');
+  const [footerText, ]=useState('This system has been developed by a student to complete his graduation work.');
+  const [titleText, ]=useState('GISE');
+  const [address,]=useState('http://192.168.2.138:5000')
   
   /*useEffect(()=>{
     var title="GenerationIntegratedSearchEngine";
@@ -297,7 +297,7 @@ function App() {
         setIsLoading(false);
       });
     }
-  }, [question]); // Déclenchement du fetch quand la question change
+  }, [question,address,fusion,generationOption,preRetrievalOption,presentationOption,rerank,retrievalOption,summary,top_k]); // Déclenchement du fetch quand la question change
 
   const handleSearch = (newQuestion) => {
     setQuestion(newQuestion);

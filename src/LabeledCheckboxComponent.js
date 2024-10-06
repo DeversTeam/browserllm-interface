@@ -7,7 +7,7 @@ function LabeledCheckboxComponent({name,options,checked,setChange}) {
         console.log(isChecked+" "+option);
         
         setChange([isChecked,option]);
-    },[isChecked,option])
+    },[isChecked,option,setChange])
     return(
         <div className="flex flex-row items-center mb-2">
                 <input id={name} type='checkbox' className="appearance-none size-5 border border-solid border-gray-300 rounded hover:border-slate-500 active:bg-gray-800 checked:bg-gray-300 hover:cursor-pointer peer" name={name} onChange={e=>setChecked(e.target.checked)}/>
