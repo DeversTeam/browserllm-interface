@@ -3,6 +3,8 @@ import SearchComponent from './SearchComponent';
 import GeneratedResponseComponent from './GeneratedResponseComponent';
 import LinkListComponent from './LinkListComponent';
 import {useState, useEffect} from "react";
+import NavbarComponent from './NavbarComponent';
+import FooterComponent from './FooterComponent';
 
 function reload(){
   window.location.reload(true);
@@ -306,9 +308,8 @@ function App() {
   
   return (
     <div className="flex flex-col bg-white h-screen">
-      <div id="navbar" className="">
-        navbar
-      </div>
+      <NavbarComponent>
+      </NavbarComponent>
       <div id="body" className="flex grow flex-col items-center bg-opacity-100 z-50 backdrop-blur-sm bg-white/30">
         <div id="empty-div" className="flex flex-col grow"></div>
         <div id="body2" className="flex flex-col items-center w-full">
@@ -328,7 +329,8 @@ function App() {
         </div>
       </div>
       <footer className="flex flex-row bottom-0 justify-center bg-slate-200 border-t text-black mt-5 z-50">
-        <span>{footerText}</span>
+        <FooterComponent>
+        </FooterComponent>
       </footer>
     </div>
   );
