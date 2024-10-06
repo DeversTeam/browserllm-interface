@@ -1,0 +1,21 @@
+name: Depoloyment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: deploy
+        run: |
+          npm install
+          npm run build
+          npm start
+      
+    
