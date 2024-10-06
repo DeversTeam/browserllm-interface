@@ -204,7 +204,7 @@ function App() {
   const [summaries, setSummaries] = useState([]);
   const [, setIsLoading] = useState(false);
   //const [prompt, setPrompt] = useState('Hello');
-  const [footerText, ]=useState('This system has been developed by a student to complete his graduation work.');
+  //const [footerText, ]=useState('This system has been developed by a student to complete his graduation work.');
   const [titleText, ]=useState('GISE');
   const [address,]=useState('http://192.168.2.138:5000')
   
